@@ -2,10 +2,10 @@ import math
 import os.path
 import sys
 
-from PySide6.QtWidgets import (
-    QApplication, QMainWindow, QLineEdit, QVBoxLayout, QWidget, QGridLayout, QPushButton, QStackedLayout, QMessageBox,
-    QDialog, QDialogButtonBox, QLabel)
 from PySide6.QtGui import Qt, QAction, QKeySequence
+from PySide6.QtWidgets import (
+    QApplication, QMainWindow, QLineEdit, QVBoxLayout, QWidget, QGridLayout, QPushButton, QStackedLayout, QDialog,
+    QDialogButtonBox, QLabel)
 
 
 # Finestra principal
