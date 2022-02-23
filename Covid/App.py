@@ -165,10 +165,7 @@ class MainWindow(QMainWindow):
             leer = csv.reader(file,  delimiter=";")
             contador = 0
             for i in leer:
-                if (contador == 0):
-                    contador += 1
-                else:
-                    self.municipi.addItem(i[1])
+                self.municipi.addItem(i[1])
                     
         #Un label de 500 x 700, es on es mostraran els grafics mes avant
         self.labelChart = QLabel()
@@ -207,6 +204,7 @@ class MainWindow(QMainWindow):
         #Desabilitem el boto de informació
         self.botoBuscarInfo.setEnabled(False)
         self.botoBuscarInfo.setVisible(False)
+        self.botoBuscarDefu.setVisible(False)
         
         self.graphWidget.close()
         self.segonLayoutH.addWidget(self.labelChart)
@@ -223,7 +221,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el inici(0.0) i un altre en el 3 ja que son els 3 primers dies
             self.series.append(QPointF(0.0, float(inci)))
@@ -237,7 +235,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el 5.0 ja que dels 5 primers dies
             self.series.append(QPointF(5.0, float(inci)))
@@ -250,7 +248,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el 10.0 ja que dels 10 primers dies
             self.series.append(QPointF(10.0, float(inci)))
@@ -263,7 +261,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el 13.0 ja que dels 13 primers dies
             self.series.append(QPointF(13.0, float(inci)))
@@ -276,7 +274,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el 17.0 ja que dels 17 primers dies
             self.series.append(QPointF(17.0, float(inci)))
@@ -289,7 +287,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el 20.0 ja que dels 20 primers dies
             self.series.append(QPointF(20.0, float(inci)))
@@ -302,7 +300,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el 24.0 ja que dels 24 primers dies
             self.series.append(QPointF(24.0, float(inci)))
@@ -315,7 +313,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Agrega un punt en el 27.0 ja que dels 27 primers dies
             self.series.append(QPointF(27.0, float(inci)))
@@ -328,7 +326,7 @@ class MainWindow(QMainWindow):
             for i in leer:
                 municipi = self.municipi.currentText()
                 if i[1] == municipi:
-                    inci = i[5]
+                    inci = i[3]
 
             #Cambia el text de baix del grafic posant la informació de les incidencies
             self.labelMissa.setText("Informació de " + self.municipi.currentText() + ": \n" +
